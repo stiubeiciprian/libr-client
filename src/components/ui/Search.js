@@ -7,7 +7,6 @@ function Search() {
 
     const [query, setQuery] = useState("");
     const [result, setResult] = useState([]);
-    const [apiKey, setApiKey] = useState(process.env.REACT_APP_GOOGLE_API_KEY);
 
     function handleChange(event) {
         const query = event.target.value;
@@ -17,16 +16,16 @@ function Search() {
     function handleSubmit(event) {
         event.preventDefault();
         
-        Axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&maxResults=40&key=${apiKey}`)
-        .then(data => {
-
-            if (data.data.totalItems == 0) {
+        Axios.get(`http://localhost:4000/api/books/${query}`)
+        .then(res => {
+            console.log(res.data.data);
+            if (res.data.data.totalItems == 0) {
                 setResult([]);
                 return;
             }
 
             // Filter volumes without thumbnail
-            const volumesWithThumbnail = data.data.items.filter(book => book.volumeInfo.hasOwnProperty('imageLinks'))
+            const volumesWithThumbnail = res.data.data.items.filter(book => book.volumeInfo.hasOwnProperty('imageLinks'))
             setResult(volumesWithThumbnail);
         });
     }
