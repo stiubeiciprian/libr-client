@@ -2,6 +2,7 @@ import React from 'react'
 import CollectionImage from '../resources/svgs/collection.svg'
 import FriendsImage from '../resources/svgs/friends.svg'
 import ReviewImage from '../resources/svgs/review.svg'
+import Footer from '../components/ui/Footer'
 
 function About() {
     return (
@@ -49,6 +50,7 @@ function About() {
                     </div>
                 </div>
                 </section>
+                <Footer/>
         </div>
     )
 }

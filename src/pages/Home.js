@@ -4,10 +4,10 @@ import HeroImage from '../resources/svgs/hero_banner.svg';
 function Home() {
     return (
         <div>
-            <section className="text-gray-700 body-font">
+        <section className="text-gray-700 body-font">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                 <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <h1 className="title-font  sm:text-5xl text-3xl mb-4 font-semibold text-gray-900">Meet your next favorite book!</h1>
+                    <h1 className="title-font  sm:text-5xl text-3xl mb-4 font-semibold text-gray-900">Meet your next <span className="text-teal-500">favorite</span> book!</h1>
                     <p className="mb-8 leading-relaxed">You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations. Chances are your friends are discussing their favorite (and least favorite) books on <strong>Libr.</strong></p>
                     <div className="flex justify-center">
                         <a href="/register" className="inline-flex cursor-pointer text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded text-lg">Register</a>
